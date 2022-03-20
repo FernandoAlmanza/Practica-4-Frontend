@@ -5,7 +5,6 @@ const fetchPokemon = () => {
     const url = `https://pokeapi.co/api/v2/pokemon/${pokeName}`;
     fetch(url).then((res) => {
         if (res.status != "200") {
-            console.log(res);
             pokeImage("https://http.cat/400")
         }
         else {
@@ -36,10 +35,8 @@ const fetchPokemon = () => {
                     i.then(j => debilidad.innerHTML = j.toString())
                 })
             })
-            console.log(data);
             let pokeImg = data.sprites.front_default;
             pokeImage(pokeImg);
-            console.log(tipoPokemon);
             nombre.innerHTML = nombrePokemon.toUpperCase()
             altura.innerHTML = `${estaturaPokemon/10} m`
             peso.innerHTML = `${pesoPokemon/10} kg`
